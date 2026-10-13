@@ -12,7 +12,7 @@
     "height": 400,    "layer": [
         {
             "data": {
-                "url": "../openpowerlifting-2026-10-10/data/aus_states.json",
+                "url": "openpowerlifting-2026-10-10/data/aus_states.json",
                 "format": {
                     "type": "topojson",
                     "feature": "states"
@@ -27,7 +27,7 @@
         },
         {
             "data": {
-                "url": "../openpowerlifting-2026-10-10/data/map2_australia_symbols_aus.csv"
+                "url": "openpowerlifting-2026-10-10/data/map2_australia_symbols_aus.csv"
             },
             "transform": [
                 {
