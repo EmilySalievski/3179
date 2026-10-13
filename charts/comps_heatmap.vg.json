@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": {
-        "url": "../openpowerlifting-2026-10-10/data/chart4_meets_by_month.csv",
+        "url": "openpowerlifting-2026-10-10/data/chart4_meets_by_month.csv",
         "format": {"type": "csv"}
     },
     "width": "container",

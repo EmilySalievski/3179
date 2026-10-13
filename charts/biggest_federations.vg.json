@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": { "text": "Biggest Powerlifting Federations"},
     "data": {
-        "url": "../openpowerlifting-2026-10-10/data/chart6_federations_aus.csv"
+        "url": "openpowerlifting-2026-10-10/data/chart6_federations_aus.csv"
     },
     "width": "container",
     "mark": "bar",

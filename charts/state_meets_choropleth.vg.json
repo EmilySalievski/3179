@@ -12,7 +12,7 @@
         "type": "mercator"
     },
     "data": {
-        "url": "../openpowerlifting-2026-10-10/data/aus_states.json",
+        "url": "openpowerlifting-2026-10-10/data/aus_states.json",
         "format": {
             "type": "topojson",
             "feature": "states"
@@ -23,7 +23,7 @@
             "lookup": "properties.STE_NAME21",
             "from": {
                 "data": {
-                    "url": "../openpowerlifting-2026-10-10/data/map3_meets_by_state.csv"
+                    "url": "openpowerlifting-2026-10-10/data/map3_meets_by_state.csv"
                 },
                 "key": "state_name",
                 "fields": [

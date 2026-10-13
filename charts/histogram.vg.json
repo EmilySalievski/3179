@@ -12,7 +12,7 @@
 "width": 540,
 "height": 400,
   "data": {
-    "url": "../openpowerlifting-2026-10-10/data/chart2_histogram_totals.csv",
+    "url": "openpowerlifting-2026-10-10/data/chart2_histogram_totals.csv",
     "format": {"type": "csv"}
   },
   "params": [

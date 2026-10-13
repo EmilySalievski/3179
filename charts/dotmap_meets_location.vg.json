@@ -8,7 +8,7 @@
     "layer": [
         {
             "data": {
-                "url": "../openpowerlifting-2026-10-10/data/aus_states.json",
+                "url": "openpowerlifting-2026-10-10/data/aus_states.json",
                 "format": {
                     "type": "topojson",
                     "feature": "states"
@@ -23,7 +23,7 @@
         },
         {
             "data": {
-                "url": "../openpowerlifting-2026-10-10/data/latlong_meets.csv",
+                "url": "openpowerlifting-2026-10-10/data/latlong_meets.csv",
                 "format": {
                     "type": "csv"
                 }
