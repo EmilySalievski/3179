@@ -1,0 +1,151 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Average DOTS score in each state (Women)"
+    },
+    "autosize": {
+        "type": "fit",
+        "contains": "padding",
+        "resize": true
+    },
+    "width": "container",
+    "height": 400,
+    "layer": [
+        {
+            "data": {
+                "url": "../openpowerlifting-2026-10-10/data/aus_states.json",
+                "format": {
+                    "type": "topojson",
+                    "feature": "states"
+                }
+            },
+            "mark": {
+                "type": "geoshape",
+                "fill": "#e6e6e6",
+                "stroke": "grey",
+                "strokeWidth": 1
+            }
+        },
+        {
+            "data": {
+                "url": "../openpowerlifting-2026-10-10/data/map2_australia_symbols_aus.csv"
+            },
+            "transform": [
+                {
+                    "filter": "datum.sex === 'Women'"
+                },
+                {
+                    "lookup": "state",
+                    "from": {
+                        "data": {
+                            "values": [
+                                {
+                                    "state": "WA",
+                                    "state_lon": 120.87,
+                                    "state_lat": -25.81
+                                },
+                                {
+                                    "state": "NT",
+                                    "state_lon": 133.26,
+                                    "state_lat": -18.49
+                                },
+                                {
+                                    "state": "SA",
+                                    "state_lon": 134.88,
+                                    "state_lat": -28.51
+                                },
+                                {
+                                    "state": "QLD",
+                                    "state_lon": 142.94,
+                                    "state_lat": -21.89
+                                },
+                                {
+                                    "state": "NSW",
+                                    "state_lon": 145.16,
+                                    "state_lat": -31.43
+                                },
+                                {
+                                    "state": "ACT",
+                                    "state_lon": 148.93,
+                                    "state_lat": -35.43
+                                },
+                                {
+                                    "state": "VIC",
+                                    "state_lon": 143.39,
+                                    "state_lat": -36.98
+                                },
+                                {
+                                    "state": "TAS",
+                                    "state_lon": 146.38,
+                                    "state_lat": -41.82
+                                }
+                            ]
+                        },
+                        "key": "state",
+                        "fields": [
+                            "state_lon",
+                            "state_lat"
+                        ]
+                    }
+                }
+            ],
+            "mark": {
+                "type": "point",
+                "filled": true,
+                "color": "#d94f91",
+                "opacity": 1
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "state_lon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "state_lat",
+                    "type": "quantitative"
+                },
+                "size": {
+                    "field": "avg_dots",
+                    "type": "quantitative",
+                    "scale": {
+                        "range": [
+                            50,
+                            400
+                        ],
+                        "zero": false
+                    },
+                    "legend": {
+                        "title": "Average DOTS",
+                        "format": ".1f",
+                        "symbolFillColor": "#3478c9"
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "state",
+                        "type": "nominal",
+                        "title": "State"
+                    },
+                    {
+                        "field": "lifters",
+                        "type": "quantitative",
+                        "title": "Number of lifters",
+                        "format": ","
+                    },
+                    {
+                        "field": "avg_dots",
+                        "type": "quantitative",
+                        "title": "Average DOTS",
+                        "format": ".1f"
+                    }
+                ]
+            }
+        }
+    ],
+    "config": {
+        "background": null,
+        "view": {
+            "stroke": null
+        }
+    }
+}

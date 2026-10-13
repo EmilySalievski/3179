@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+
+<body>
+    <main class="page">
+
+        <header class="page-header">
+            <h1>Powerlifting in Australia</h1>
+            <h2>A closer look at Australia's powerlifting scene...</h2>
+
+            <div class="introduction">
+                Powerlifting is a competitive strength-based sport which focuses on three lifts:
+                bench press, squat, and deadlift. Australia is home to a range of lifters, varying
+                in gender, age, bodyweight, and experience, who compete in competitions from local
+                to national championships. This visualisation will explore Australia's powerlifting
+                scene, identify where competitions take place, investigate participation, and
+                evaluate strength statistics.
+            </div>
+        </header>
+
+        <!-- SECTION 1 -->
+        <section class="story-section">
+            <h3>1. Powerlifting across Australia</h3>
+
+            <div class="map-section">
+                <div id="meets-map" class="chart"></div>
+
+                <div class="map-text">
+                    <h4>Where is the sport happening?</h4>
+                    <p class="story">
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                    </p>
+                </div>
+            </div>
+
+            <div class="section-intro">
+                <h4>Our strongest lifters, according to DOTS</h4>
+                <p class="story">
+                    DOTS is a powerlifting scoring system that adjusts for bodyweight and sex,
+                    allowing performances between lifters of different sizes to be compared.
+                    It uses a lifter's combined squat, bench press and deadlift total.
+                    Placeholder text.
+                </p>
+            </div>
+
+            <div class="maps-row">
+                <div id="mens-dots" class="chart"></div>
+                <div id="womens-dots" class="chart"></div>
+            </div>
+        </section>
+
+        <!-- SECTION 2 -->
+        <section class="story-section">
+            <h3>2. The competition scene</h3>
+
+            <div class="maps-row">
+                <div id="comps-heatmap" class="chart"></div>
+
+                <div class="map-text">
+                    <h4>When does competition take place?</h4>
+                    <p class="story">
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                    </p>
+                </div>
+            </div>
+
+            <div class="maps-row">
+                <div id="feds-bar" class="chart"></div>
+
+                <div class="map-text">
+                    <h4>Biggest powerlifting federations</h4>
+                    <p class="story">
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                    </p>
+                </div>
+            </div>
+
+            <div class="map-section">
+                <div id="dotmap-meets" class="chart"></div>
+
+                <div class="map-text">
+                    <h4>Where are Australia's major championships held?</h4>
+                    <p class="story">
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3 -->
+        <section class="story-section">
+            <h3>3. Who are the lifters?</h3>
+
+            <div class="maps-row">
+                <div id="histogram" class="chart"></div>
+
+                <div class="map-text">
+                    <h4>How do competition totals vary by bodyweight?</h4>
+                    <p class="story">
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4 -->
+        <section class="story-section">
+            <h3>4. Where do you stand?</h3>
+
+            <div>
+                <p class="story">
+                    placeholder text placeholder text placeholder text placeholder text placeholder text 
+                    placeholder text placeholder text placeholder text placeholder text placeholder text 
+                    placeholder text placeholder text placeholder text placeholder text placeholder text 
+                    placeholder text placeholder text placeholder text placeholder text placeholder text 
+                </p>
+            </div>
+
+            <div class="lift-images">
+                <img src="images/bench.png" alt="bench">
+                <img src="images/squat.png" alt="squat">
+                <img src="images/dl.png" alt="dl">
+            </div>
+
+            <div id="strength-dumbbell" class="chart"></div>
+        </section>
+
+        <!-- DATA SOURCES AND ACKNOWLEDGEMENTS -->
+        <footer class="metadata">
+            <h3>About this visualisation</h3>
+            <p>Author: Emily Salievski</p>
+            <p>Date: October 2026</p>
+
+            <h4>Data sources</h4>
+            <p>
+                placeholder text placeholder text placeholder text placeholder text placeholder text 
+                placeholder text placeholder text placeholder text placeholder text placeholder text 
+                placeholder text placeholder text placeholder text placeholder text placeholder text 
+                placeholder text placeholder text placeholder text placeholder text placeholder text 
+            </p>
+        </footer>
+
+    </main>
+
+    <script>
+        const embedOptions = { actions: false };
+
+        vegaEmbed(
+            "#meets-map",
+            "charts/state_meets_choropleth.vg.json",
+            embedOptions
+        );
+
+        vegaEmbed(
+            "#mens-dots",
+            "charts/map2_men.vg.json",
+            embedOptions
+        );
+
+        vegaEmbed(
+            "#womens-dots",
+            "charts/map2_women.vg.json",
+            embedOptions
+        );
+
+        vegaEmbed(
+            "#feds-bar",
+            "charts/biggest_federations.vg.json",
+            embedOptions
+        );
+
+        vegaEmbed(
+            "#comps-heatmap",
+            "charts/comps_heatmap.vg.json",
+            embedOptions
+        );
+
+        vegaEmbed(
+            "#histogram",
+            "charts/histogram.vg.json",
+            embedOptions
+        );
+
+        vegaEmbed(
+            "#dotmap-meets",
+            "charts/dotmap_meets_location.vg.json",
+            embedOptions
+        );
+
+        vegaEmbed(
+            "#strength-dumbbell",
+            "charts/chart_gap_connected_dots.vg.json",
+            embedOptions
+        );
+    </script>
+</body>
+
+</html>

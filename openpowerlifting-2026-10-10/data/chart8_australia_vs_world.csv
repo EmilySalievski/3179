@@ -1,0 +1,13 @@
+group,Sex,lift,lifters,avg_kg
+Australia,F,Bench,4849,64.0
+Australia,F,Deadlift,4849,140.5
+Australia,F,Squat,4849,116.5
+Australia,M,Bench,7402,126.0
+Australia,M,Deadlift,7402,226.2
+Australia,M,Squat,7402,194.8
+Rest of world,F,Bench,117825,60.2
+Rest of world,F,Deadlift,117825,131.1
+Rest of world,F,Squat,117825,109.2
+Rest of world,M,Bench,243826,124.1
+Rest of world,M,Deadlift,243826,217.2
+Rest of world,M,Squat,243826,188.7

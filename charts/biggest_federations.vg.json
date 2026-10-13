@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": { "text": "Biggest Powerlifting Federations"},
+    "data": {
+        "url": "../openpowerlifting-2026-10-10/data/chart6_federations_aus.csv"
+    },
+    "width": "container",
+    "mark": "bar",
+    "encoding": {
+        "x": { "field": "lifters", "type": "quantitative", "title": "Num. of participants"},
+        "y": { "field": "Federation", "type": "ordinal", "title": "Federation", "sort": "-x"},
+        "color": {
+            "value": "#00a846"
+        }
+    },
+    "config": {
+        "background": null,
+        "view": {
+            "stroke": null
+        }
+    }
+}

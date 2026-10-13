@@ -1,0 +1,76 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Most Popular 2025 Powerlifting Championships Locations"
+    },
+    "width": "container",
+    "height": 400,
+    "layer": [
+        {
+            "data": {
+                "url": "../openpowerlifting-2026-10-10/data/aus_states.json",
+                "format": {
+                    "type": "topojson",
+                    "feature": "states"
+                }
+            },
+            "mark": {
+                "type": "geoshape",
+                "fill": "#e6e6e6",
+                "stroke": "grey",
+                "strokeWidth": 1
+            }
+        },
+        {
+            "data": {
+                "url": "../openpowerlifting-2026-10-10/data/latlong_meets.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": {
+                "type": "point",
+                "filled": true,
+                "color": "#00a846",
+                "size": 60,
+                "opacity": 0.8,
+                "stroke": "white",
+                "strokeWidth": 1
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "Longitude",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "Latitude",
+                    "type": "quantitative"
+                },
+                "tooltip": [
+                    {
+                        "field": "MeetName",
+                        "type": "nominal",
+                        "title": "Championship"
+                    },
+                    {
+                        "field": "Federation",
+                        "type": "nominal",
+                        "title": "Federation"
+                    },
+                    {
+                        "field": "Date",
+                        "type": "temporal",
+                        "title": "Date",
+                        "format": "%d %b %Y"
+                    }
+                ]
+            }
+        }
+    ],
+    "config": {
+        "background": null,
+        "view": {
+            "stroke": null
+        }
+    }
+}

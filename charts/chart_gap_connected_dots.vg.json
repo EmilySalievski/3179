@@ -1,0 +1,109 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "../openpowerlifting-2026-10-10/data/strengthlevel_standards_long.csv",
+    "format": {"type": "csv"}
+  },
+
+  "facet": {
+    "column": {
+      "field": "lift",
+      "type": "nominal",
+      "sort": ["Bench", "Squat", "Deadlift"]
+    }
+  },
+  "spec": {
+    "width": 341,
+    "layer": [
+        {"mark": { "type": "line", "color":"#868e9c"},
+        "encoding": {
+          "x": {
+            "field": "kg",
+            "type": "quantitative",
+            "scale": {
+              "zero": true,
+              "domain": [0, 325]
+            }
+          },
+          "y": {
+            "field": "bodyweight_kg",
+            "type": "quantitative",
+            "title": "Bodyweight (kg)",
+            "scale": {
+              "zero": false
+            },
+            "axis": {
+              "tickMinStep": 10
+            }
+          },
+          "detail": {
+            "field": "bodyweight_kg"
+          }
+        }},
+        {"mark": {
+          "type": "point",
+          "filled": true,
+          "size": 50,
+          "opacity": 1
+        },
+        "encoding": {
+          "x": {
+            "field": "kg",
+            "type": "quantitative",
+            "title": "Lift weight (kg)"
+          },
+          "y": {
+            "field": "bodyweight_kg",
+            "type": "quantitative",
+            "title": "Bodyweight (kg)"
+          },
+          "color": {
+            "field": "sex",
+            "type": "nominal",
+            "title": "Gender",
+            "scale": {
+              "domain": ["Men", "Women"],
+              "range": ["#3478c9", "#d94f91"]
+            },
+            "legend": {
+              "orient": "bottom",
+              "direction": "horizontal"
+            }
+          },
+          "tooltip": [
+            {"field": "bodyweight_kg", "type": "quantitative", "title": "Bodyweight (kg)"},
+            {"field": "kg", "type": "quantitative", "title": "Lift weight (kg)"},
+            {"field": "sex", "type": "nominal", "title": "Gender"}
+          ]
+        }}
+      ]
+  },
+  "params": [
+    { 
+      "name": "level_pick",
+      "value": "Intermediate",
+      "bind": {
+        "name": "Choose level: ",
+        "input": "select",
+        "options": [
+          "Beginner",
+          "Novice",
+          "Intermediate",
+          "Advanced",
+          "Elite"
+        ]
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum.level === level_pick"
+    }
+  ],
+  "config": {
+      "background": null,
+      "view": {
+          "stroke": null
+      }
+  }
+}

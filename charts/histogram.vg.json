@@ -1,0 +1,101 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Competition totals by bodyweight"
+  },
+  "autosize": {
+        "type": "fit",
+        "contains": "padding",
+        "resize": true
+    },
+"width": 540,
+"height": 400,
+  "data": {
+    "url": "../openpowerlifting-2026-10-10/data/chart2_histogram_totals.csv",
+    "format": {"type": "csv"}
+  },
+  "params": [
+    {
+      "name": "weight_pick",
+      "value": "60-79 kg",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Under 60 kg",
+          "60-79 kg",
+          "80-99 kg",
+          "100-119 kg",
+          "120 kg and over"
+        ],
+        "name": "Bodyweight category: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum.bw_group === weight_pick"
+    },
+    {
+      "aggregate": [
+        {"op": "sum", "field": "lifters", "as": "results"}
+      ],
+      "groupby": ["Sex", "total_bin"]
+    }
+  ],
+  "mark": {
+    "type": "bar",
+    "tooltip": true,
+    "opacity": 0.6
+  },
+  "encoding": {
+    "x": {
+      "field": "total_bin",
+      "type": "quantitative",
+      "title": "Competition total (kg)"
+    },
+    "y": {
+      "field": "results",
+      "type": "quantitative",
+      "title": "Competition results",
+      "stack": null,
+      "scale": {
+        "zero": true,
+        "domain": [0, 70]
+        }
+    },
+    "color": {
+      "field": "Sex",
+      "type": "nominal",
+      "title": "Sex",
+      "scale": {
+        "domain": ["F", "M"],
+        "range": ["#d94f91", "#3478c9"]
+      },
+      "legend": {
+        "labelExpr": "datum.label === 'F' ? 'Women' : 'Men'"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "Sex",
+        "type": "nominal",
+        "title": "Sex"
+      },
+      {
+        "field": "total_bin",
+        "type": "quantitative",
+        "title": "Total bin starts at (kg)"
+      },
+      {
+        "field": "results",
+        "type": "quantitative",
+        "title": "Competition results"
+      }
+    ]
+  },
+  "config": {
+    "background": null,
+    "view": {"stroke": null}
+  }
+}

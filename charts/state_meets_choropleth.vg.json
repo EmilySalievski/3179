@@ -1,0 +1,88 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Which states host the most meets (per capita)?",
+    "autosize": {
+        "type": "fit",
+        "contains": "padding",
+        "resize": true
+    },
+    "width": "container",
+    "height": 400,
+    "projection": {
+        "type": "mercator"
+    },
+    "data": {
+        "url": "../openpowerlifting-2026-10-10/data/aus_states.json",
+        "format": {
+            "type": "topojson",
+            "feature": "states"
+        }
+    },
+    "transform": [
+        {
+            "lookup": "properties.STE_NAME21",
+            "from": {
+                "data": {
+                    "url": "../openpowerlifting-2026-10-10/data/map3_meets_by_state.csv"
+                },
+                "key": "state_name",
+                "fields": [
+                    "state",
+                    "state_name",
+                    "meets",
+                    "population"
+                ]
+            }
+        },
+        {
+            "calculate": "datum.meets/datum.population * 100000",
+            "as": "Meets per 100,000 population"
+        }
+    ],
+    "mark": {
+        "type": "geoshape"
+    },
+    "encoding": {
+        "color": {
+            "field": "Meets per 100,000 population",
+            "type": "quantitative",
+            "scale": {
+                "type": "threshold",
+                "domain": [
+                    5,
+                    7,
+                    10
+                ],
+                "scheme": "blues"
+            },
+            "legend": {
+                "title": "Meets per 100,000 people",
+                "orient": "bottom",
+                "direction": "horizontal"
+            }
+        },
+        "tooltip": [
+            {
+                "field": "properties.STE_NAME21",
+                "type": "nominal",
+                "title": "State"
+            },
+            {
+                "field": "meets",
+                "type": "quantitative",
+                "title": "Number of Meets"
+            },
+            {
+                "field": "Meets per 100,000 population",
+                "type": "quantitative",
+                "format": ".2f"
+            }
+        ]
+    },
+    "config": {
+        "background": null,
+        "view": {
+            "stroke": null
+        }
+    }
+}

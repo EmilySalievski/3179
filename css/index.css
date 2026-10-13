@@ -1,0 +1,106 @@
+@font-face {
+    font-family: 'Old School United';
+    src: url('fonts/old_school_united/old_school_united_shadow.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.page {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    background-color: transparent;
+}
+
+h1 {
+    font-family: 'Old School United', serif;
+    font-size: 50px;
+    margin-bottom: 5px;
+    color: rgb(35, 47, 102);
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: rgb(58, 61, 65);
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: rgb(64, 132, 199);
+    padding-top: 40px;
+}
+
+
+body {
+    background-color: #ede7f1;
+}
+
+.introduction {
+    color: #333333;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.map-section {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 20px 0 40px;
+}
+
+.chart {
+    flex: 1;
+    min-width: 0;
+    border-radius: 12px;
+}
+
+.map-text {
+    flex: 1;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+}
+
+.map-text h4 {
+    font-size: 16px;
+    margin-top: 0;
+}
+
+.map-text p {
+    font-size: 15px;
+}
+
+.maps-row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.maps-row > .chart,
+.maps-row > p {
+    flex: 1 1 0;
+    width: 50%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.story {
+    padding-left: 26px;
+}
+
+.lift-images {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.lift-images img {
+    width: 200x;
+    height: 200px;
+    object-fit: contain;
+}

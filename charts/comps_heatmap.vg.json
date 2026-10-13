@@ -1,0 +1,55 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "../openpowerlifting-2026-10-10/data/chart4_meets_by_month.csv",
+        "format": {"type": "csv"}
+    },
+    "width": "container",
+    "mark": "rect",
+    "encoding": {
+        "x": {
+            "field": "month_name",
+            "type": "ordinal",
+            "title": "Month",
+            "sort": [
+                "Jan", "Feb", "Mar", "Apr",
+                "May", "Jun", "Jul", "Aug",
+                "Sep", "Oct", "Nov", "Dec"
+            ]
+        },
+        "y": {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year",
+            "sort": "ascending"
+        },
+        "color": {
+            "field": "meets",
+            "type": "quantitative",
+            "title": "Number of meets",
+            "bin": {
+                "maxbins": 10
+            },
+            "scale": {
+                "scheme": "greens"
+            },
+            "legend": {
+                "orient": "bottom",
+                "direction": "horizontal",
+                "columns": 5
+            }
+        }
+    },
+    "transform": [
+        {
+            "calculate": "['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][datum.month - 1]",
+            "as": "month_name"
+        }
+    ],
+    "config": {
+        "background": null,
+        "view": {
+            "stroke": null
+        }
+    }
+}
