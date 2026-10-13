@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Old School United';
-    src: url('fonts/old_school_united/old_school_united_shadow.ttf') format('truetype');
+    src: url('../fonts/old_school_united/old_school_united_shadow.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
