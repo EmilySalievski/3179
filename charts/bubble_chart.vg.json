@@ -1,0 +1,118 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Age versus relative strength",
+    "subtitle": "Australian powerlifters competing in 2026"
+  },
+  "autosize": {
+    "type": "fit",
+    "contains": "padding",
+    "resize": true
+  },
+  "width": 540,
+  "height": 400,
+  "data": {
+    "url": "../openpowerlifting-2026-10-10/chart3_age_vs_dots.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "mark": {
+    "type": "circle",
+    "opacity": 0.7,
+    "stroke": "#ffffff",
+    "strokeWidth": 0.5
+  },
+  "encoding": {
+    "x": {
+      "field": "Age",
+      "type": "quantitative",
+      "title": "Age (years)",
+      "scale": {
+        "zero": false
+      },
+      "axis": {
+        "tickMinStep": 5
+      }
+    },
+    "y": {
+      "field": "DOTS",
+      "type": "quantitative",
+      "title": "DOTS score",
+      "scale": {
+        "zero": false
+      }
+    },
+    "size": {
+      "field": "total_kg",
+      "type": "quantitative",
+      "title": "Total lifted (kg)",
+      "scale": {
+        "range": [30, 500]
+      }
+    },
+    "color": {
+      "field": "Sex",
+      "type": "nominal",
+      "title": "Sex",
+      "scale": {
+        "domain": ["M", "F"],
+        "range": ["#3478c9", "#d94f91"]
+      },
+      "legend": {
+        "orient": "bottom",
+        "direction": "horizontal",
+        "labelExpr": "datum.label === 'M' ? 'Men' : 'Women'"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "Name",
+        "type": "nominal",
+        "title": "Lifter"
+      },
+      {
+        "field": "Sex",
+        "type": "nominal",
+        "title": "Sex",
+        "legend": {
+          "labelExpr": "datum.label === 'M' ? 'Men' : 'Women'"
+        }
+      },
+      {
+        "field": "Age",
+        "type": "quantitative",
+        "title": "Age",
+        "format": ".1f"
+      },
+      {
+        "field": "DOTS",
+        "type": "quantitative",
+        "title": "DOTS score",
+        "format": ".2f"
+      },
+      {
+        "field": "bodyweight_kg",
+        "type": "quantitative",
+        "title": "Bodyweight (kg)"
+      },
+      {
+        "field": "total_kg",
+        "type": "quantitative",
+        "title": "Total lifted (kg)"
+      },
+      {
+        "field": "Date",
+        "type": "temporal",
+        "title": "Competition date"
+      }
+    ]
+  },
+  "config": {
+    "background": null,
+    "view": {
+      "stroke": null
+    }
+  }
+}

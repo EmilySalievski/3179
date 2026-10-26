@@ -1,0 +1,11 @@
+Person,Name,Sex,squat_kg,bench_kg,deadlift_kg,total_kg,DOTS
+Woman 1,Laura Tedeschi,F,185.0,105.0,175.0,465.0,538.35
+Woman 2,Tilea Fulcher,F,192.5,92.5,212.5,497.5,534.55
+Woman 3,Brittany Romas,F,205.0,121.0,213.5,539.5,530.38
+Woman 4,Schae Zarew,F,170.0,100.0,190.0,460.0,528.97
+Woman 5,Emma Hall,F,190.0,117.5,215.0,522.5,528.59
+Man 1,Keyan Babaei-Somaghi,M,270.0,175.0,305.5,750.5,544.06
+Man 2,Simon Chehade,M,280.0,182.5,377.5,840.0,535.42
+Man 3,Joshua Tukua,M,312.5,192.5,332.5,837.5,534.67
+Man 4,Cana Chambara,M,297.5,177.5,315.0,790.0,533.32
+Man 5,Edward Zhang,M,270.0,177.5,277.5,725.0,526.5

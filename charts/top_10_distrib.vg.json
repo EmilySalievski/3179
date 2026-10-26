@@ -1,0 +1,133 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "How do the top lifters build their total?",
+    "subtitle": "Contribution of each lift to the total for the top 5 women and men in 2026"
+  },
+  "autosize": {
+    "type": "fit",
+    "contains": "padding",
+    "resize": true
+  },
+  "width": 540,
+  "height": 400,
+  "data": {
+    "url": "../openpowerlifting-2026-10-10/chart4_top10_lift_composition.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "transform": [
+    {
+      "fold": [
+        "squat_kg",
+        "bench_kg",
+        "deadlift_kg"
+      ],
+      "as": ["Lift", "WeightKg"]
+    },
+    {
+      "calculate": "datum.Lift === 'squat_kg' ? 'Squat' : datum.Lift === 'bench_kg' ? 'Bench press' : 'Deadlift'",
+      "as": "LiftLabel"
+    }
+  ],
+  "mark": {
+    "type": "bar"
+  },
+  "encoding": {
+    "y": {
+      "field": "Person",
+      "type": "ordinal",
+      "sort": [
+        "Woman 1",
+        "Woman 2",
+        "Woman 3",
+        "Woman 4",
+        "Woman 5",
+        "Man 1",
+        "Man 2",
+        "Man 3",
+        "Man 4",
+        "Man 5"
+        ],
+      "title": "Lifter"
+    },
+    "x": {
+      "aggregate": "sum",
+      "field": "WeightKg",
+      "type": "quantitative",
+      "stack": "normalize",
+      "title": "Percentage of total lifted",
+      "axis": {
+        "format": ".0%"
+      }
+    },
+    "color": {
+      "field": "LiftLabel",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Squat", "Bench press", "Deadlift"],
+        "range": ["#46ab5f", "#8c5cb5", "#e6a23c"]
+      },
+      "legend": {
+        "title": "Lift",
+        "orient": "bottom"
+      }
+    },
+    "order": {
+      "field": "LiftLabel",
+      "sort": ["Squat", "Bench press", "Deadlift"]
+    },
+    "tooltip": [
+      {
+        "field": "Person",
+        "type": "nominal",
+        "title": "Lifter"
+      },
+      {
+        "field": "Sex",
+        "type": "nominal",
+        "title": "Sex",
+        "scale": {
+          "domain": ["F", "M"],
+          "range": ["Women", "Men"]
+        }
+      },
+      {
+        "field": "LiftLabel",
+        "type": "nominal",
+        "title": "Lift"
+      },
+      {
+        "field": "WeightKg",
+        "type": "quantitative",
+        "title": "Lift weight (kg)",
+        "format": ".1f"
+      },
+      {
+        "field": "total_kg",
+        "type": "quantitative",
+        "title": "Total (kg)",
+        "format": ".1f"
+      },
+      {
+        "field": "DOTS",
+        "type": "quantitative",
+        "title": "DOTS",
+        "format": ".1f"
+      }
+    ]
+  },
+  "config": {
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "gridOpacity": 0.2
+    }
+  }
+}

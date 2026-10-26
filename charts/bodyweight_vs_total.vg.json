@@ -1,0 +1,107 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Does bodyweight affect total lifted?",
+    "subtitle": "Australian powerlifters competing in 2026"
+  },
+  "autosize": {
+    "type": "fit",
+    "contains": "padding",
+    "resize": true
+  },
+  "width": 540,
+  "height": 400,
+  "data": {
+    "url": "../openpowerlifting-2026-10-10/chart4_bodyweight_vs_total.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "mark": {
+    "type": "circle",
+    "opacity": 0.9,
+    "size": 10,
+    "stroke": "white",
+    "strokeWidth": 0.4
+  },
+  "encoding": {
+    "x": {
+      "field": "bodyweight_kg",
+      "type": "quantitative",
+      "title": "Bodyweight (kg)",
+      "scale": {
+        "zero": false
+      },
+      "axis": {
+        "tickMinStep": 10
+      }
+    },
+    "y": {
+      "field": "total_kg",
+      "type": "quantitative",
+      "title": "Total lifted (kg)",
+      "scale": {
+        "zero": false
+      }
+    },
+    "color": {
+      "field": "Sex",
+      "type": "nominal",
+      "scale": {
+        "domain": ["F", "M"],
+        "range": ["#d94f91", "#3478c9"]
+      },
+      "legend": {
+        "title": null,
+        "orient": "bottom",
+        "labelExpr": "datum.label === 'F' ? 'Women' : 'Men'"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "Name",
+        "type": "nominal",
+        "title": "Lifter"
+      },
+      {
+        "field": "Sex",
+        "type": "nominal",
+        "title": "Sex",
+        "scale": {
+          "domain": ["F", "M"],
+          "range": ["Women", "Men"]
+        }
+      },
+      {
+        "field": "bodyweight_kg",
+        "type": "quantitative",
+        "title": "Bodyweight (kg)",
+        "format": ".1f"
+      },
+      {
+        "field": "total_kg",
+        "type": "quantitative",
+        "title": "Total lifted (kg)",
+        "format": ".1f"
+      },
+      {
+        "field": "DOTS",
+        "type": "quantitative",
+        "title": "DOTS",
+        "format": ".1f"
+      }
+    ]
+  },
+  "config": {
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "gridOpacity": 0.2
+    }
+  }
+}

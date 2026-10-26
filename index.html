@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -128,6 +129,32 @@
                     </p>
                 </div>
             </div>
+
+            <div class="maps-row">
+                <div class="map-text">
+                    <h4>How do competition totals vary by bodyweight?</h4>
+                    <p class="story">
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                    </p>
+                </div>
+                <div id="bubble-chart" class="chart"></div>
+            </div>
+
+            <div class="maps-row">
+                    <div id="age-distribution" class="chart"></div>
+                    <div class="map-text">
+                    <h4>How do competition totals vary by bodyweight?</h4>
+                    <p class="story">
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                    </p>
+                </div>
+            </div>
         </section>
 
         <!-- SECTION 4 -->
@@ -150,7 +177,43 @@
             </div>
 
             <div id="strength-dumbbell" class="chart"></div>
+
+            <div class="maps-row">
+                    <div id="bodyweight-vs-total" class="chart"></div>
+                    <div class="map-text">
+                    <h4>How do competition totals vary by bodyweight?</h4>
+                    <p class="story">
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                    </p>
+                </div>
+            </div>
+
+            <div class="maps-row">
+                    <div id="top-10-distrib" class="chart"></div>
+                    <div class="map-text">
+                    <h4>How do competition totals vary by bodyweight?</h4>
+                    <p class="story">
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                        placeholder text placeholder text placeholder text placeholder text placeholder text 
+                    </p>
+                </div>
+            </div>
+
         </section>
+
+        <div class="introduction">
+            Powerlifting is a competitive strength-based sport which focuses on three lifts:
+            bench press, squat, and deadlift. Australia is home to a range of lifters, varying
+            in gender, age, bodyweight, and experience, who compete in competitions from local
+            to national championships. This visualisation will explore Australia's powerlifting
+            scene, identify where competitions take place, investigate participation, and
+            evaluate strength statistics.
+        </div>
 
         <!-- DATA SOURCES AND ACKNOWLEDGEMENTS -->
         <footer class="metadata">
@@ -217,6 +280,30 @@
         vegaEmbed(
             "#strength-dumbbell",
             "charts/chart_gap_connected_dots.vg.json",
+            embedOptions
+        );
+
+        vegaEmbed(
+            "#age-distribution",
+            "charts/age_distribution.vg.json",
+            embedOptions
+        );
+
+        vegaEmbed(
+            "#bubble-chart",
+            "charts/bubble_chart.vg.json",
+            embedOptions
+        );
+
+        vegaEmbed(
+            "#bodyweight-vs-total",
+            "charts/bodyweight_vs_total.vg.json",
+            embedOptions
+        );
+
+        vegaEmbed(
+            "#top-10-distrib",
+            "charts/top_10_distrib.vg.json",
             embedOptions
         );
     </script>

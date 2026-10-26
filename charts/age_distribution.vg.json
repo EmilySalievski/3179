@@ -1,0 +1,95 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Age distribution by sex",
+    "subtitle": "Australian powerlifters competing in 2026"
+  },
+  "autosize": {
+    "type": "fit",
+    "contains": "padding",
+    "resize": true
+  },
+  "width": 540,
+  "height": 400,
+  "data": {
+    "url": "../openpowerlifting-2026-10-10/chart3_age_distribution.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "mark": {
+    "type": "bar",
+    "tooltip": true,
+    "opacity": 0.6
+  },
+  "encoding": {
+    "x": {
+      "field": "age_group",
+      "type": "ordinal",
+      "title": "Age group",
+      "sort": [
+        "14-24",
+        "25-34",
+        "35-44",
+        "45-54",
+        "55-64",
+        "65+"
+      ],
+      "axis": {
+        "labelAngle": 0
+      }
+    },
+    "xOffset": {
+      "field": "Sex",
+      "type": "nominal",
+      "sort": ["F", "M"]
+    },
+    "y": {
+      "field": "lifters",
+      "type": "quantitative",
+      "title": "Number of lifters",
+      "scale": {
+        "zero": true
+      }
+    },
+    "color": {
+      "field": "Sex",
+      "type": "nominal",
+      "title": "Sex",
+      "scale": {
+        "domain": ["F", "M"],
+        "range": ["#d94f91", "#3478c9"]
+      },
+      "legend": {
+        "labelExpr": "datum.label === 'F' ? 'Women' : 'Men'"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "Sex",
+        "type": "nominal",
+        "title": "Sex",
+        "legend": {
+          "labelExpr": "datum.label === 'F' ? 'Women' : 'Men'"
+        }
+      },
+      {
+        "field": "age_group",
+        "type": "ordinal",
+        "title": "Age group"
+      },
+      {
+        "field": "lifters",
+        "type": "quantitative",
+        "title": "Number of lifters"
+      }
+    ]
+  },
+  "config": {
+    "background": null,
+    "view": {
+      "stroke": null
+    }
+  }
+}

@@ -10,7 +10,7 @@
         "x": { "field": "lifters", "type": "quantitative", "title": "Num. of participants"},
         "y": { "field": "Federation", "type": "ordinal", "title": "Federation", "sort": "-x"},
         "color": {
-            "value": "#00a846"
+            "value": "#6464e8"
         }
     },
     "config": {
