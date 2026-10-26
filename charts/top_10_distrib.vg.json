@@ -13,7 +13,7 @@
   "width": 540,
   "height": 400,
   "data": {
-    "url": "../openpowerlifting-2026-10-10/chart4_top10_lift_composition.csv",
+    "url": "https://emilysalievski.github.io/3179/openpowerlifting-2026-10-10/chart4_top10_lift_composition.csv",
     "format": {
       "type": "csv"
     }
