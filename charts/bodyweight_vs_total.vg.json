@@ -2,8 +2,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Does bodyweight affect total lifted?",
-    "subtitle": "Australian powerlifters competing in 2026"
+    "text": "Bodyweight VS Total Lifted (Australian powerlifters 2026)"
   },
   "autosize": {
     "type": "fit",

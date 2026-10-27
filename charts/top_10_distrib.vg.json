@@ -2,8 +2,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "How do the top lifters build their total?",
-    "subtitle": "Contribution of each lift to the total for the top 5 women and men in 2026"
+    "text": "Totl weight lifted distribution"
   },
   "autosize": {
     "type": "fit",

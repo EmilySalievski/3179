@@ -13,7 +13,7 @@
     }
   },
   "spec": {
-    "width": 341,
+    "width": 330,
     "layer": [
         {"mark": { "type": "line", "color":"#868e9c"},
         "encoding": {

@@ -57,7 +57,7 @@
     "y": {
       "field": "results",
       "type": "quantitative",
-      "title": "Competition results",
+      "title": "Number of lifters",
       "stack": null,
       "scale": {
         "zero": true,
